@@ -19,8 +19,8 @@ jobs:
       - name: Install dependencies
         run: npm ci || echo "No package.json"
 
-      - name: Run update script
-        run: node update_playlist.js
+      - name: Run Update Script
+        run: node scripts/update_playlist.js
 
       - name: Commit and push changes
         run: |
