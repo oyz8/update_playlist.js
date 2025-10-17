@@ -37,7 +37,6 @@ async function main() {
           name,
           album: "未找到匹配",
           pic: "",
-          url: id,
           lrc: id,
           source,
         });
