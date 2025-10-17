@@ -35,7 +35,7 @@ async function main() {
         updated.push({
           id,
           name,
-          album: "未找到匹配",
+          artist: "未找到匹配",
           pic: "",
           lrc: id,
           source,
@@ -44,9 +44,8 @@ async function main() {
         updated.push({
           id: match.id,
           name: match.name,
-          album: match.artist?.join(", ") || match.album || "未知",
+          artist: match.artist?.join(", ") || match.album || "未知",
           pic: match.pic_id || "",
-          url: match.url_id || match.id,
           lrc: match.lyric_id || match.id,
           source: match.source || source,
         });
@@ -54,7 +53,7 @@ async function main() {
       }
     } catch (err) {
       console.error(`❌ ${name} 处理失败:`, err.message);
-      updated.push({ id, name, album: "错误", pic: "", url: id, lrc: id, source });
+      updated.push({ id, name, artist: "错误", pic: "", lrc: id, source });
     }
 
     await sleep(DELAY); // 控制频率，避免超速
